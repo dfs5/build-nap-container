@@ -1,0 +1,35 @@
+# For Ubuntu 18.04:
+FROM app-protect
+
+# Download certificate and key from the customer portal (https://cs.nginx.com)
+# and copy to the build context:
+COPY nginx-repo.crt nginx-repo.key /etc/ssl/nginx/
+
+# Add NGINX Plus App Protect Security Updates repository:
+RUN printf "deb https://app-protect-security-updates.nginx.com/ubuntu/ `lsb_release -cs` nginx-plus\n" | tee /etc/apt/sources.list.d/app-protect-security-updates.list
+
+# Download and add the NGINX Plus App Protect Signatures & TC signing key:
+RUN wget https://cs.nginx.com/static/keys/app-protect-security-updates.key && apt-key add app-protect-security-updates.key
+
+# Download the apt configuration to `/etc/apt/apt.conf.d`:
+RUN wget -P /etc/apt/apt.conf.d https://cs.nginx.com/static/files/90app-protect-security-updates
+
+# Update attack signatures:
+RUN apt-get update && apt-get install -y app-protect-attack-signatures
+
+# Remove nginx repository key/cert from docker
+RUN rm -rf /etc/ssl/nginx
+
+CMD ["sh", "/root/entrypoint.sh"]
+
+# to run this update for a prevoiusly build image named 'app-protect':
+# sudo docker build --no-cache -t app-protect -f NAPupdateSIG .
+
+# To install a specific version, list the available versions:
+# sudo apt-cache policy app-protect-attack-signatures
+
+# Install a specific version:
+# sudo apt-get install app-protect-attack-signatures=2020.07.16-1~bionic
+
+# In order for the signature update to take effect, NGINX must be reloaded!!!
+# udo docker exec my-app-protect nginx -s reload
