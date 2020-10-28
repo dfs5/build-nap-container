@@ -30,7 +30,11 @@ Verify
 
 1. Build Nginx+ Container with App Protect included
 
+>> git clone https://github.com/dfs5/build-nap-container.git
+
 >> cd build-nap-container
+
+Create nginx-repo.crt and nginx-repo.key files to access your nginx repository!!! 
 
 >> docker images
 
