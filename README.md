@@ -5,8 +5,11 @@ Preparations
 Install Demo-host. In this case it is Ubuntu 18.04 Server.
 
 Setup pub key auth to the Demo-host:
-ssh-keygen
-ssh-copy-id -i ~/.ssh/mykey user@host
+
+>> ssh-keygen
+
+>> ssh-copy-id -i ~/.ssh/mykey user@host
+
 
 ssh to Demo-host:
 
