@@ -20,7 +20,7 @@ Log out and log back in so that your group membership is re-evaluated.
 If testing on a virtual machine, it may be necessary to restart the virtual machine for changes to take effect.
 
 Verify
-docker ps # should work without sudo
+docker ps #      should work without sudo
 
 1. Build Nginx+ Container with App Protect included
 
@@ -28,5 +28,6 @@ docker ps # should work without sudo
 
 >> docker images
 
-$ docker build --no-cache -t app-protect .
-$ docker images
+>> docker build --no-cache -t app-protect .
+
+>> docker images     #new image app-protect:latest is created
