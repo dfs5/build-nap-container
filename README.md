@@ -24,7 +24,9 @@ docker ps # should work without sudo
 
 1. Build Nginx+ Container with App Protect included
 
-cd build-nap-container
-docker images
+>> cd build-nap-container
+
+>> docker images
+
 $ docker build --no-cache -t app-protect .
 $ docker images
