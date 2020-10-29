@@ -1,5 +1,9 @@
 # build-nap-container
 
+For reference check the official NGINX docs:
+
+https://docs.nginx.com/nginx-app-protect/admin-guide/#docker-deployment
+
 Preparations:
 
 Platform: In this case Ubuntu 18.04 Server.
