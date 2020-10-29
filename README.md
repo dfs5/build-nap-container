@@ -51,7 +51,7 @@ You are done with this part!!!
 
 You can stop and clean the container and follow with nap-demo if you like: 
 
-LINK here!!!
+https://github.com/dfs5/nap-demo
 
 >> docker stop my-app-protect
 
