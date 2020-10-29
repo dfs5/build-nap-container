@@ -2,22 +2,13 @@
 
 Preparations:
 
-Install Demo-host. In this case it is Ubuntu 18.04 Server.
-
-Setup pub key auth to the Demo-host:
-
->> ssh-keygen
-
->> ssh-copy-id -i ~/.ssh/mykey user@host
-
+Platform: In this case Ubuntu 18.04 Server.
 
 ssh to Demo-host:
 
-Create the docker group
+Make docker command run withoput sudo
 
 >> sudo groupadd docker
-
-Add your user to the docker group
 
 >> sudo usermod -aG docker $USER
 
@@ -58,7 +49,9 @@ Verify App Protect processes (bd_agent, bd-socket-plugin, nginx: master process,
 
 You are done with this part!!!
 
-You can stop and clean the container and follow with Link
+You can stop and clean the container and follow with nap-demo if you like: 
+
+LINK here!!!
 
 >> docker stop my-app-protect
 
