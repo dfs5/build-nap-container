@@ -30,7 +30,8 @@ $ docker ps      #should work without sudo
 
 -------------------
 
-# Build Nginx+ Container with App Protect included
+Build Nginx+ Container with App Protect included
+--
 
 1. Initial build
 
