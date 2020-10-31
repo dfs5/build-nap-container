@@ -28,8 +28,6 @@ Verify
 
 $ docker ps      #should work without sudo
 
--------------------
-
 Build Nginx+ Container with App Protect included
 --
 
@@ -67,7 +65,7 @@ $ docker exec -it my-app-protect bash
 
 $ ps aux
 
-You are done with this part!!!
+You are done with the first part!!!
 --
 
 You can stop and clean the container and follow with nap-demo to see NAP in action: 
