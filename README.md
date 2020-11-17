@@ -39,11 +39,11 @@ $ cd build-nap-container
 
 Create nginx-repo.crt and nginx-repo.key files to access your nginx repository!!! 
 
-$ docker images
-
 $ docker build --no-cache -t app-protect .
 
-$ docker images     #new image app-protect:latest is created
+Verify new 'app-protect:latest' image has been created: 
+
+$ docker images
 
 2. Update SIGnatures and Threat Campaigns (TC)
 
