@@ -41,13 +41,19 @@ Create nginx-repo.crt and nginx-repo.key files to access your nginx repository!!
 
 $ docker build --no-cache -t app-protect .
 
-Verify new 'app-protect:latest' image has been created: 
+Verify that a new 'app-protect:latest' image has been created: 
 
 $ docker images
 
 2. Update SIGnatures and Threat Campaigns (TC)
 
 $ docker build --no-cache -t app-protect -f NAPupdateSIG-TC .
+
+In log output watch out for signature update entries similar to: 
+- 'app-protect-attack-signatures amd64 2020.11.12-1~bionic'
+- 'app-protect-threat-campaigns amd64 2020.11.11-1~bionic'
+
+Also verify that 'app-protect' image has a new image id.
 
 $ docker images      #image app-protect has a new image id
 
