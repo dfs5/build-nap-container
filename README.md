@@ -79,13 +79,13 @@ or:
 
 5. Optional if you want to use the convertaer tool. Create a temporary folder and copy your XML policy file(s) to it:
 
-        mkdir /tmp/converter
+        mkdir converter
     
-        cp policy.xml /tmp/converter/
+        cp policy.xml converter/
       
 And run the docker image with the temporary folder as a mounted volume on the container, and run the policy converter script:
 
-    docker run -v /tmp/convert:/tmp/convert app-protect-converter /opt/app_protect/bin/convert-policy -i /tmp/convert/policy.xml -o /tmp/convert/policy.json | jq
+    docker run -v $(pwd)/converter:/tmp/converter app-protect /opt/app_protect/bin/convert-policy -i /tmp/converter/policy.xml -o /tmp/converter/policy.json | jq
 
 You are done with the first part!!!
 --
