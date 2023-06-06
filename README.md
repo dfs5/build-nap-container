@@ -39,7 +39,7 @@ $ cd build-nap-container
 
 Create nginx-repo.crt and nginx-repo.key files to access your nginx repository!!! 
 
-$ docker build --no-cache -t app-protect .
+$ DOCKER_BUILDKIT=1 docker build --no-cache --secret id=nginx-crt,src=nginx-repo.crt --secret id=nginx-key,src=nginx-repo.key -t app-protect .
 
 Verify that a new 'app-protect:latest' image has been created: 
 
@@ -70,6 +70,12 @@ or:
 $ docker exec -it my-app-protect bash
 
 $ ps aux
+
+4. Check the NGINX binary version and default configuration
+
+& docker exec my-app-protect nginx -v
+
+& docker exec my-app-protect nginx -T
 
 You are done with the first part!!!
 --
